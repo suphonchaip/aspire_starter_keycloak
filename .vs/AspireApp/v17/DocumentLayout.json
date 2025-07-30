@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\dev\\_private\\_proto\\AspireApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Program.cs",
+              "RelativeDocumentMoniker": "AspireApp.Web\\Program.cs",
+              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Program.cs",
+              "RelativeToolTip": "AspireApp.Web\\Program.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAlwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T09:35:04.423Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
