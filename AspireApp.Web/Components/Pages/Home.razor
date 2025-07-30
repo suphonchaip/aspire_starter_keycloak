@@ -6,6 +6,7 @@
 @attribute [OutputCache(Duration = 5)]
 @inject WeatherApiClient WeatherApi
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
 
 <PageTitle>Home</PageTitle>
 
@@ -47,8 +48,6 @@
     </NotAuthorized>
 </AuthorizeView>
 
-
-
 @code {
     private WeatherForecast[]? forecasts;
 
@@ -59,7 +58,14 @@
 
         if (user.Identity?.IsAuthenticated == true)
         {
-            forecasts = await WeatherApi.GetWeatherAsync();
+            try
+            {
+                forecasts = await WeatherApi.GetWeatherAsync();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                NavigationManager.NavigateTo("/authentication/login");
+            }
         }
     }
 }

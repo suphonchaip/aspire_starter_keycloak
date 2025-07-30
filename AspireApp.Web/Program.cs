@@ -1,11 +1,14 @@
-using System.IdentityModel.Tokens.Jwt;
 using AspireApp.Web;
 using AspireApp.Web.Components;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using MudBlazor.Services;
+using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddMudServices();
 
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
