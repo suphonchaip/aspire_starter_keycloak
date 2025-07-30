@@ -165,6 +165,10 @@
             "Aspire.StackExchange.Redis.OutputCaching": {
               "target": "Package",
               "version": "[9.3.1, )"
+            },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[8.10.0, )"
             }
           },
           "imports": [

@@ -93,3 +93,12 @@ D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.Identi
 D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.Web\obj\Debug\net8.0\AspireApp.Web.sourcelink.json
 D:\dev\_private\_proto\AspireApp\AspireApp.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.JSInterop.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\MudBlazor.dll

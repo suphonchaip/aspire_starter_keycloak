@@ -3,7 +3,12 @@
   "WorkspaceRootPath": "D:\\dev\\_private\\_proto\\AspireApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|Solution Items{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}|C:\\Users\\suphonchai\\Downloads\\realm-export.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\aspireapp.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\aspireapp.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -34,30 +39,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "realm-export.json",
-              "DocumentMoniker": "C:\\Users\\suphonchai\\Downloads\\realm-export.json",
-              "ToolTip": "C:\\Users\\suphonchai\\Downloads\\realm-export.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-30T14:10:31.675Z",
+              "Title": "app.css",
+              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\wwwroot\\app.css",
+              "RelativeDocumentMoniker": "AspireApp.Web\\wwwroot\\app.css",
+              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\wwwroot\\app.css",
+              "RelativeToolTip": "AspireApp.Web\\wwwroot\\app.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-30T22:17:03.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AspireApp.Web",
+              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\AspireApp.Web.csproj",
+              "RelativeDocumentMoniker": "AspireApp.Web\\AspireApp.Web.csproj",
+              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\AspireApp.Web.csproj*",
+              "RelativeToolTip": "AspireApp.Web\\AspireApp.Web.csproj*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-30T22:15:27.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Home.razor",
               "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Pages\\Home.razor",
               "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "AspireApp.Web\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-30T13:50:59.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "LoginLogoutEndpointRouteBuilderExtensions.cs",
               "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\LoginLogoutEndpointRouteBuilderExtensions.cs",
               "RelativeDocumentMoniker": "AspireApp.Web\\LoginLogoutEndpointRouteBuilderExtensions.cs",
@@ -70,7 +90,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AuthorizationHandler.cs",
               "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\AuthorizationHandler.cs",
               "RelativeDocumentMoniker": "AspireApp.Web\\AuthorizationHandler.cs",
@@ -83,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Program.cs",
               "RelativeDocumentMoniker": "AspireApp.Web\\Program.cs",
@@ -91,7 +111,8 @@
               "RelativeToolTip": "AspireApp.Web\\Program.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAlwB4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T09:35:04.423Z"
+              "WhenOpened": "2025-07-30T09:35:04.423Z",
+              "EditorCaption": ""
             }
           ]
         }
