@@ -9,12 +9,10 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Weather</h1>
-
-<p>This component demonstrates showing data loaded from a backend API service.</p>
-
-<AuthorizeView>
+<AuthorizeView Roles="admin">
     <Authorized>
+        <h1>Welcome, Admin!</h1>
+        <p>You have access to the weather data.</p>
         @if (forecasts == null)
         {
             <p><em>Loading...</em></p>
