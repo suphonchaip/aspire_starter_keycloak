@@ -1,0 +1,5 @@
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\wwwroot\fonts\.part
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\wwwroot\fonts\README.md
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\wwwroot\fonts\srinakharinwirot-regular.eot
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\wwwroot\fonts\srinakharinwirot-regular.woff
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\wwwroot\fonts\srinakharinwirot-regular.woff2

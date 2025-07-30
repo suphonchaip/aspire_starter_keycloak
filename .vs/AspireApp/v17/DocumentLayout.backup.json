@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Pages\\Home.razor",
               "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "AspireApp.Web\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAABYAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-30T22:36:40.304Z",
               "EditorCaption": ""
@@ -71,7 +71,8 @@
               "RelativeToolTip": "AspireApp.Web\\AuthorizationHandler.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T22:34:20.847Z"
+              "WhenOpened": "2025-07-30T22:34:20.847Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -83,7 +84,8 @@
               "RelativeToolTip": "AspireApp.Web\\Components\\Pages\\Weather.razor",
               "ViewState": "AgIAAB8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T22:34:15.598Z"
+              "WhenOpened": "2025-07-30T22:34:15.598Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -95,7 +97,8 @@
               "RelativeToolTip": "AspireApp.Web\\WeatherApiClient.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAiwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T22:34:06.828Z"
+              "WhenOpened": "2025-07-30T22:34:06.828Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -107,7 +110,8 @@
               "RelativeToolTip": "AspireApp.Web\\Components\\Pages\\Counter.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T22:28:30.59Z"
+              "WhenOpened": "2025-07-30T22:28:30.59Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -119,7 +123,8 @@
               "RelativeToolTip": "AspireApp.Web\\Components\\_Imports.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T22:27:32.518Z"
+              "WhenOpened": "2025-07-30T22:27:32.518Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -131,7 +136,8 @@
               "RelativeToolTip": "AspireApp.Web\\Components\\Layout\\MainLayout.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T22:27:19.287Z"
+              "WhenOpened": "2025-07-30T22:27:19.287Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -143,7 +149,8 @@
               "RelativeToolTip": "AspireApp.Web\\Components\\App.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T22:25:32.638Z"
+              "WhenOpened": "2025-07-30T22:25:32.638Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -155,7 +162,8 @@
               "RelativeToolTip": "AspireApp.Web\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T09:35:04.423Z"
+              "WhenOpened": "2025-07-30T09:35:04.423Z",
+              "EditorCaption": ""
             }
           ]
         }
