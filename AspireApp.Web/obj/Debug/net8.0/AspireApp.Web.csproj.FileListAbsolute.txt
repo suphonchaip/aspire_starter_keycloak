@@ -91,3 +91,5 @@ D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.Identi
 D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\obj\Debug\net8.0\AspireApp.Web.sourcelink.json
+D:\dev\_private\_proto\AspireApp\AspireApp.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

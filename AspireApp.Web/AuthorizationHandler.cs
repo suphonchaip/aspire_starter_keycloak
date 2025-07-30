@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Http;
+using System.Net;
 
 namespace AspireApp.Web
 {
@@ -17,7 +19,18 @@ namespace AspireApp.Web
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             }
 
-            return await base.SendAsync(request, cancellationToken);
+            var response = await base.SendAsync(request, cancellationToken);
+
+            // If unauthorized, redirect to login
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                if (httpContext.Response != null)
+                {
+                    httpContext.Response.Redirect("/authentication/login");
+                }
+            }
+
+            return response;
         }
     }
 }

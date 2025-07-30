@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\dev\\_private\\_proto\\AspireApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\authorizationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\authorizationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AuthorizationHandler.cs",
+              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\AuthorizationHandler.cs",
+              "RelativeDocumentMoniker": "AspireApp.Web\\AuthorizationHandler.cs",
+              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\AuthorizationHandler.cs",
+              "RelativeToolTip": "AspireApp.Web\\AuthorizationHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T09:57:46.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Program.cs",
               "RelativeDocumentMoniker": "AspireApp.Web\\Program.cs",
               "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Program.cs",
               "RelativeToolTip": "AspireApp.Web\\Program.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAlwEgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAlwB4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T09:35:04.423Z",
               "EditorCaption": ""
