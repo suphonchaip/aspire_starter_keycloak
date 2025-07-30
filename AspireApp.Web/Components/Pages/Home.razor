@@ -6,15 +6,14 @@
 @attribute [OutputCache(Duration = 5)]
 @inject WeatherApiClient WeatherApi
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
 
 <PageTitle>Home</PageTitle>
 
-<h1>Weather</h1>
-
-<p>This component demonstrates showing data loaded from a backend API service.</p>
-
-<AuthorizeView>
+<AuthorizeView Roles="admin">
     <Authorized>
+        <h1>Welcome, Admin!</h1>
+        <p>You have access to the weather data.</p>
         @if (forecasts == null)
         {
             <p><em>Loading...</em></p>
@@ -49,8 +48,6 @@
     </NotAuthorized>
 </AuthorizeView>
 
-
-
 @code {
     private WeatherForecast[]? forecasts;
 
@@ -61,7 +58,14 @@
 
         if (user.Identity?.IsAuthenticated == true)
         {
-            forecasts = await WeatherApi.GetWeatherAsync();
+            try
+            {
+                forecasts = await WeatherApi.GetWeatherAsync();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                NavigationManager.NavigateTo("/authentication/login");
+            }
         }
     }
 }

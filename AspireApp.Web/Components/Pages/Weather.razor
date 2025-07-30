@@ -3,6 +3,7 @@
 @attribute [OutputCache(Duration = 5)]
 
 @inject WeatherApiClient WeatherApi
+@inject NavigationManager NavigationManager
 
 <PageTitle>Weather</PageTitle>
 
@@ -44,6 +45,13 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await WeatherApi.GetWeatherAsync();
+        try
+        {
+            forecasts = await WeatherApi.GetWeatherAsync();
+        }
+        catch (UnauthorizedAccessException)
+        {
+            NavigationManager.NavigateTo("/authentication/login");
+        }
     }
 }

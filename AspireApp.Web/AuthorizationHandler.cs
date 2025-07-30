@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Http;
 
 namespace AspireApp.Web
 {
@@ -17,6 +18,7 @@ namespace AspireApp.Web
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             }
 
+            // Remove redirect logic here
             return await base.SendAsync(request, cancellationToken);
         }
     }
