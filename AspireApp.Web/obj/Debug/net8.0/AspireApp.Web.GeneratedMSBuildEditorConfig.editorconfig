@@ -31,6 +31,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTG9naW5EaXNwbGF5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Pages/AuthDebug.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoRGVidWcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Pages/AuthTest.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoVGVzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -41,6 +49,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Pages/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Pages/TestFont.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0Rm9udC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Pages/Weather.razor]

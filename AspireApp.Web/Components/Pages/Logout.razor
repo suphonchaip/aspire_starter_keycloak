@@ -1,0 +1,176 @@
+﻿@page "/logout"
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Components.Authorization
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IJSRuntime JSRuntime
+@inject IHttpContextAccessor HttpContextAccessor
+
+<PageTitle>ออกจากระบบ</PageTitle>
+
+<div class="d-flex justify-center align-center" style="min-height: 100vh;">
+    <MudCard Style="width: 400px;">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h4" Align="Align.Center">ออกจากระบบ</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            @if (isAuthenticated)
+            {
+                <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-4">
+                    สวัสดี <strong>@userName</strong><br/>
+                    คุณต้องการออกจากระบบหรือไม่?
+                </MudText>
+                
+                <div class="d-flex flex-column gap-3">
+                    <MudButton Variant="Variant.Filled" 
+                              Color="Color.Error" 
+                              FullWidth="true"
+                              Size="Size.Large"
+                              StartIcon="@Icons.Material.Filled.Logout"
+                              OnClick="LogoutFromSystem"
+                              Disabled="@isLoggingOut">
+                        @if (isLoggingOut)
+                        {
+                            <MudProgressCircular Size="Size.Small" Indeterminate="true" />
+                            <span class="ms-2">กำลังออกจากระบบ...</span>
+                        }
+                        else
+                        {
+                            <span>ออกจากระบบ</span>
+                        }
+                    </MudButton>
+                    
+                    <MudButton Variant="Variant.Outlined" 
+                              Color="Color.Primary" 
+                              FullWidth="true"
+                              Size="Size.Large"
+                              OnClick="@(() => NavigationManager.NavigateTo("/"))">
+                        ยกเลิก
+                    </MudButton>
+                </div>
+                
+                @if (!string.IsNullOrEmpty(debugMessage))
+                {
+                    <MudAlert Severity="Severity.Info" Class="mt-3">
+                        <strong>Debug:</strong> @debugMessage
+                    </MudAlert>
+                }
+            }
+            else
+            {
+                <MudText Typo="Typo.body1" Align="Align.Center" Class="mb-4">
+                    คุณยังไม่ได้เข้าสู่ระบบ
+                </MudText>
+                
+                <MudButton Variant="Variant.Filled" 
+                          Color="Color.Primary" 
+                          FullWidth="true"
+                          Size="Size.Large"
+                          OnClick="@(() => NavigationManager.NavigateTo("/login"))">
+                    เข้าสู่ระบบ
+                </MudButton>
+            }
+        </MudCardContent>
+    </MudCard>
+</div>
+
+@code {
+    private bool isAuthenticated = false;
+    private string userName = "";
+    private bool isLoggingOut = false;
+    private string debugMessage = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        isAuthenticated = authState.User.Identity?.IsAuthenticated == true;
+        userName = authState.User.Identity?.Name ?? "Unknown";
+        
+        // Debug info
+        var hasServerAuth = HttpContextAccessor.HttpContext?.User?.Identity?.IsAuthenticated == true;
+        var hasSessionToken = false;
+        
+        try
+        {
+            var token = await JSRuntime.InvokeAsync<string>("sessionStorage.getItem", "access_token");
+            hasSessionToken = !string.IsNullOrEmpty(token);
+        }
+        catch
+        {
+            // Ignore
+        }
+        
+        debugMessage = $"Server Auth: {hasServerAuth}, Session Token: {hasSessionToken}";
+    }
+
+    private async Task LogoutFromSystem()
+    {
+        isLoggingOut = true;
+        debugMessage = "Starting logout process...";
+        StateHasChanged();
+
+        try
+        {
+            // ตรวจสอบประเภทของ authentication
+            var hasServerAuth = HttpContextAccessor.HttpContext?.User?.Identity?.IsAuthenticated == true;
+            var hasSessionToken = false;
+            
+            try
+            {
+                var token = await JSRuntime.InvokeAsync<string>("sessionStorage.getItem", "access_token");
+                hasSessionToken = !string.IsNullOrEmpty(token);
+            }
+            catch
+            {
+                // Ignore
+            }
+
+            // ล้าง client-side tokens เสมอ
+            await JSRuntime.InvokeVoidAsync("sessionStorage.removeItem", "access_token");
+            await JSRuntime.InvokeVoidAsync("sessionStorage.removeItem", "refresh_token");
+            
+            // แจ้งให้ Authentication State Provider รู้ว่ามีการ logout
+            if (AuthenticationStateProvider is HybridAuthenticationStateProvider hybridProvider)
+            {
+                hybridProvider.NotifyUserLogout();
+            }
+
+            debugMessage = $"Cleared tokens. Server Auth: {hasServerAuth}";
+            StateHasChanged();
+            
+            // รอสักครู่เพื่อให้ state อัปเดต
+            await Task.Delay(500);
+            
+            // ถ้ามี server-side authentication ให้ไปผ่าน OIDC logout
+            if (hasServerAuth)
+            {
+                debugMessage = "Redirecting to OIDC logout...";
+                StateHasChanged();
+                NavigationManager.NavigateTo("/authentication/logout", forceLoad: true);
+            }
+            else
+            {
+                // ถ้าเป็น client-side authentication อย่างเดียว ให้กลับหน้าหลัก
+                debugMessage = "Client-side logout complete, redirecting home...";
+                StateHasChanged();
+                await Task.Delay(1000);
+                NavigationManager.NavigateTo("/", forceLoad: true);
+            }
+        }
+        catch (Exception ex)
+        {
+            debugMessage = $"Error during logout: {ex.Message}";
+            StateHasChanged();
+            
+            // หากมีข้อผิดพลาด ให้ redirect ไปหน้าหลัก
+            await Task.Delay(2000);
+            NavigationManager.NavigateTo("/", forceLoad: true);
+        }
+        finally
+        {
+            isLoggingOut = false;
+        }
+    }
+}

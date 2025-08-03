@@ -5,7 +5,10 @@ D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\AspireApp.Ap
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\AspireApp.AppHost.pdb
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Aspire.Hosting.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Aspire.Hosting.AppHost.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Aspire.Hosting.Docker.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Aspire.Hosting.Keycloak.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Aspire.Hosting.Redis.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Aspire.Hosting.Seq.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\HealthChecks.Redis.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\HealthChecks.Uris.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Fractions.dll
@@ -51,6 +54,7 @@ D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Nerdbank.Str
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Polly.Core.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Semver.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\StackExchange.Redis.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\StreamJsonRpc.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
@@ -117,13 +121,10 @@ D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\AspireApp.Ap
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\Aspire\references\AspireApp_ApiService.ProjectMetadata.g.cs
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\Aspire\references\AspireApp_Web.ProjectMetadata.g.cs
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\Aspire\references\_AppHost.ProjectMetadata.g.cs
+D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\AspireApp.AppHost.sourcelink.json
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\AspireAp.AEA60E94.Up2Date
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\AspireApp.AppHost.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\refint\AspireApp.AppHost.dll
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\AspireApp.AppHost.pdb
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\AspireApp.AppHost.genruntimeconfig.cache
 D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\obj\Debug\net8.0\ref\AspireApp.AppHost.dll
-D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Aspire.Hosting.Docker.dll
-D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Semver.dll
-D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Aspire.Hosting.Seq.dll
-D:\dev\_private\_proto\AspireApp\AspireApp.AppHost\bin\Debug\net8.0\Aspire.Hosting.Keycloak.dll

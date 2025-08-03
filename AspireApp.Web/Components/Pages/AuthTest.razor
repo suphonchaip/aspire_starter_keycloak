@@ -1,0 +1,147 @@
+﻿@page "/auth-test"
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthStateProvider
+
+<PageTitle>Test Authentication Components</PageTitle>
+
+<div class="container mt-4">
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h4">Authentication Components Test</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <div class="d-flex flex-column gap-4">
+                
+                <!-- Test AuthorizeView -->
+                <MudCard Variant="Variant.Outlined">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">AuthorizeView Test</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <AuthorizeView>
+                            <Authorized>
+                                <MudAlert Severity="Severity.Success">
+                                    <strong>✅ AuthorizeView: Authorized</strong><br/>
+                                    User: @context.User.Identity?.Name<br/>
+                                    Auth Type: @context.User.Identity?.AuthenticationType
+                                </MudAlert>
+                            </Authorized>
+                            <NotAuthorized>
+                                <MudAlert Severity="Severity.Error">
+                                    <strong>❌ AuthorizeView: Not Authorized</strong>
+                                </MudAlert>
+                            </NotAuthorized>
+                        </AuthorizeView>
+                    </MudCardContent>
+                </MudCard>
+
+                <!-- Test CascadingAuthenticationState -->
+                <MudCard Variant="Variant.Outlined">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">CascadingAuthenticationState Test</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <CascadingAuthenticationState>
+                            <AuthorizeView>
+                                <Authorized>
+                                    <MudAlert Severity="Severity.Success">
+                                        <strong>✅ Cascading: Authorized</strong><br/>
+                                        User: @context.User.Identity?.Name
+                                    </MudAlert>
+                                </Authorized>
+                                <NotAuthorized>
+                                    <MudAlert Severity="Severity.Error">
+                                        <strong>❌ Cascading: Not Authorized</strong>
+                                    </MudAlert>
+                                </NotAuthorized>
+                            </AuthorizeView>
+                        </CascadingAuthenticationState>
+                    </MudCardContent>
+                </MudCard>
+
+                <!-- Manual Authentication Check -->
+                <MudCard Variant="Variant.Outlined">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Manual Check</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        @if (isManuallyAuthenticated)
+                        {
+                            <MudAlert Severity="Severity.Success">
+                                <strong>✅ Manual Check: Authenticated</strong><br/>
+                                User: @manualUserName<br/>
+                                Claims Count: @manualClaimsCount
+                            </MudAlert>
+                        }
+                        else
+                        {
+                            <MudAlert Severity="Severity.Error">
+                                <strong>❌ Manual Check: Not Authenticated</strong>
+                            </MudAlert>
+                        }
+                        
+                        <div class="mt-3">
+                            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="RefreshManualCheck">
+                                Refresh Manual Check
+                            </MudButton>
+                        </div>
+                    </MudCardContent>
+                </MudCard>
+
+                <!-- LoginDisplay Test -->
+                <MudCard Variant="Variant.Outlined">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">LoginDisplay Component Test</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <div class="border p-3 rounded">
+                            <LoginDisplay />
+                        </div>
+                    </MudCardContent>
+                </MudCard>
+
+            </div>
+        </MudCardContent>
+    </MudCard>
+</div>
+
+@code {
+    private bool isManuallyAuthenticated = false;
+    private string manualUserName = "";
+    private int manualClaimsCount = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await RefreshManualCheck();
+    }
+
+    private async Task RefreshManualCheck()
+    {
+        try
+        {
+            var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+            isManuallyAuthenticated = authState.User.Identity?.IsAuthenticated == true;
+            manualUserName = authState.User.Identity?.Name ?? "No Name";
+            manualClaimsCount = authState.User.Claims.Count();
+            StateHasChanged();
+        }
+        catch (Exception)
+        {
+            isManuallyAuthenticated = false;
+            manualUserName = "Error";
+            manualClaimsCount = 0;
+            StateHasChanged();
+        }
+    }
+}

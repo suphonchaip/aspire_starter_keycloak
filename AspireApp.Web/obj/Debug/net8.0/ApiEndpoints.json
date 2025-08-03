@@ -6,7 +6,13 @@
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "returnUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Void",
@@ -19,10 +25,60 @@
     "ContainingType": "AspireApp.Web.LoginLogoutEndpointRouteBuilderExtensions\u002B\u003C\u003Ec",
     "Method": "\u003CMapLoginAndLogout\u003Eb__0_1",
     "RelativePath": "authentication/logout",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "returnUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AspireApp.Web.LoginLogoutEndpointRouteBuilderExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapLoginAndLogout\u003Eb__0_2",
+    "RelativePath": "authentication/logout",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "returnUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AspireApp.Web.LoginLogoutEndpointRouteBuilderExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapLoginAndLogout\u003Eb__0_3",
+    "RelativePath": "authentication/signout-callback-oidc",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "returnUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Void",

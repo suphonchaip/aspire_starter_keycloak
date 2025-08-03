@@ -1,0 +1,187 @@
+﻿@page "/login"
+@rendermode InteractiveServer
+@inject NavigationManager NavigationManager
+@inject IKeycloakAuthService AuthService
+@inject IJSRuntime JSRuntime
+@inject Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider AuthStateProvider
+@using AspireApp.Web.Services
+@using Microsoft.AspNetCore.Components.Authorization
+
+<PageTitle>เข้าสู่ระบบ</PageTitle>
+
+<div class="d-flex justify-center align-center" style="min-height: 100vh;">
+    <MudCard Style="width: 450px;">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h4" Align="Align.Center">เข้าสู่ระบบ</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <EditForm Model="@loginModel" OnValidSubmit="HandleLogin">
+                <DataAnnotationsValidator />
+                
+                <div class="d-flex flex-column gap-3">
+                    <!-- Username Field -->
+                    <MudTextField @bind-Value="loginModel.Username"
+                                  For="@(() => loginModel.Username)"
+                                  Label="ชื่อผู้ใช้"
+                                  Placeholder="กรุณากรอกชื่อผู้ใช้"
+                                  Variant="Variant.Outlined"
+                                  StartIcon="@Icons.Material.Filled.Person"
+                                  Disabled="@isLoading" />
+                    
+                    <!-- Password Field -->
+                    <MudTextField @bind-Value="loginModel.Password"
+                                  For="@(() => loginModel.Password)"
+                                  Label="รหัสผ่าน"
+                                  Placeholder="กรุณากรอกรหัสผ่าน"
+                                  Variant="Variant.Outlined"
+                                  InputType="@passwordInputType"
+                                  StartIcon="@Icons.Material.Filled.Lock"
+                                  Adornment="Adornment.End"
+                                  AdornmentIcon="@passwordVisibilityIcon"
+                                  OnAdornmentClick="TogglePasswordVisibility"
+                                  Disabled="@isLoading" />
+                    
+                    <!-- Error Message -->
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <MudAlert Severity="Severity.Error">
+                            @errorMessage
+                        </MudAlert>
+                    }
+                    
+                    <!-- Login Button -->
+                    <MudButton ButtonType="ButtonType.Submit"
+                              Variant="Variant.Filled" 
+                              Color="Color.Primary" 
+                              FullWidth="true"
+                              Size="Size.Large"
+                              StartIcon="@Icons.Material.Filled.Login"
+                              Disabled="@isLoading">
+                        @if (isLoading)
+                        {
+                            <MudProgressCircular Size="Size.Small" Indeterminate="true" />
+                            <span class="ms-2">กำลังเข้าสู่ระบบ...</span>
+                        }
+                        else
+                        {
+                            <span>เข้าสู่ระบบ</span>
+                        }
+                    </MudButton>
+                    
+                    <MudDivider />
+                    
+                    <!-- Alternative Login -->
+                    <MudButton Variant="Variant.Outlined" 
+                              Color="Color.Secondary" 
+                              FullWidth="true"
+                              Size="Size.Medium"
+                              StartIcon="@Icons.Material.Filled.OpenInNew"
+                              OnClick="LoginWithKeycloakRedirect"
+                              Disabled="@isLoading">
+                        เข้าสู่ระบบผ่าน Keycloak
+                    </MudButton>
+                    
+                    <MudText Typo="Typo.caption" Align="Align.Center" Class="text-muted">
+                        การเข้าสู่ระบบจะเชื่อมต่อไปยัง Keycloak Server
+                    </MudText>
+                </div>
+            </EditForm>
+        </MudCardContent>
+    </MudCard>
+</div>
+
+<script>
+    window.redirectToUrl = (url) => {
+        window.location.href = url;
+    };
+</script>
+
+@code {
+    [Parameter, SupplyParameterFromQuery] public string? ReturnUrl { get; set; }
+    
+    private LoginModel loginModel = new();
+    private bool isLoading = false;
+    private string errorMessage = "";
+    private bool passwordVisible = false;
+    
+    private InputType passwordInputType => passwordVisible ? InputType.Text : InputType.Password;
+    private string passwordVisibilityIcon => passwordVisible ? Icons.Material.Filled.VisibilityOff : Icons.Material.Filled.Visibility;
+
+    private async Task HandleLogin()
+    {
+        if (string.IsNullOrWhiteSpace(loginModel.Username) || string.IsNullOrWhiteSpace(loginModel.Password))
+        {
+            errorMessage = "กรุณากรอกชื่อผู้ใช้และรหัสผ่าน";
+            return;
+        }
+
+        isLoading = true;
+        errorMessage = "";
+        StateHasChanged();
+
+        try
+        {
+            var result = await AuthService.LoginAsync(loginModel.Username, loginModel.Password);
+            
+            if (result.IsSuccess && !string.IsNullOrEmpty(result.AccessToken))
+            {
+                // Store tokens in session storage
+                await JSRuntime.InvokeVoidAsync("sessionStorage.setItem", "access_token", result.AccessToken);
+                await JSRuntime.InvokeVoidAsync("sessionStorage.setItem", "refresh_token", result.RefreshToken);
+                
+                // Notify authentication state provider
+                if (AuthStateProvider is HybridAuthenticationStateProvider hybridProvider)
+                {
+                    hybridProvider.NotifyUserAuthentication(result.AccessToken);
+                }
+                else if (AuthStateProvider is CustomAuthenticationStateProvider customProvider)
+                {
+                    customProvider.NotifyUserAuthentication(result.AccessToken);
+                }
+                
+                // Small delay to ensure state is updated
+                await Task.Delay(100);
+                
+                // Redirect to return URL or home with force reload
+                var returnUrl = ReturnUrl ?? "/";
+                await JSRuntime.InvokeVoidAsync("redirectToUrl", returnUrl);
+            }
+            else
+            {
+                errorMessage = result.ErrorMessage ?? "เข้าสู่ระบบไม่สำเร็จ กรุณาตรวจสอบชื่อผู้ใช้และรหัสผ่าน";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"เกิดข้อผิดพลาด: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private void LoginWithKeycloakRedirect()
+    {
+        var returnUrl = ReturnUrl ?? "/";
+        var loginUrl = $"/authentication/login?returnUrl={Uri.EscapeDataString(returnUrl)}";
+        NavigationManager.NavigateTo(loginUrl, forceLoad: true);
+    }
+
+    private void TogglePasswordVisibility()
+    {
+        passwordVisible = !passwordVisible;
+    }
+
+    public class LoginModel
+    {
+        [Required(ErrorMessage = "กรุณากรอกชื่อผู้ใช้")]
+        public string Username { get; set; } = "";
+        
+        [Required(ErrorMessage = "กรุณากรอกรหัสผ่าน")]
+        public string Password { get; set; } = "";
+    }
+}

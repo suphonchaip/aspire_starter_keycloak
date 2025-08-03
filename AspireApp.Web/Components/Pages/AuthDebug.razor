@@ -1,0 +1,285 @@
+﻿@page "/auth-debug"
+@rendermode InteractiveServer
+@inject AuthenticationStateProvider AuthStateProvider
+@inject IJSRuntime JSRuntime
+@inject IHttpContextAccessor HttpContextAccessor
+@using Microsoft.AspNetCore.Components.Authorization
+@using AspireApp.Web.Services
+
+<PageTitle>Debug Authentication</PageTitle>
+
+<div class="container mt-4">
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h4">Authentication State Debug</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <div class="d-flex flex-column gap-3">
+                
+                <MudAlert Severity="Severity.Info">
+                    <strong>Current Time:</strong> @DateTime.Now.ToString("HH:mm:ss")
+                </MudAlert>
+                
+                <MudAlert Severity="@(isAuthenticated ? Severity.Success : Severity.Warning)">
+                    <strong>Authentication Status:</strong> @(isAuthenticated ? "Authenticated" : "Not Authenticated")
+                </MudAlert>
+                
+                <MudAlert Severity="Severity.Info">
+                    <strong>Provider Type:</strong> @providerType
+                </MudAlert>
+                
+                <MudAlert Severity="@(hasServerAuth ? Severity.Success : Severity.Warning)">
+                    <strong>Server-side Authentication:</strong> @(hasServerAuth ? "Yes" : "No")
+                </MudAlert>
+                
+                <MudAlert Severity="@(hasSessionToken ? Severity.Success : Severity.Warning)">
+                    <strong>Session Token:</strong> @(hasSessionToken ? "Present" : "Not found")
+                </MudAlert>
+                
+                @if (!string.IsNullOrEmpty(userName))
+                {
+                    <MudAlert Severity="Severity.Success">
+                        <strong>User Name:</strong> @userName
+                    </MudAlert>
+                }
+                
+                @if (!string.IsNullOrEmpty(authMethod))
+                {
+                    <MudAlert Severity="Severity.Info">
+                        <strong>Authentication Method:</strong> @authMethod
+                    </MudAlert>
+                }
+                
+                @if (claims.Any())
+                {
+                    <MudExpansionPanels>
+                        <MudExpansionPanel Text="@($"Claims ({claims.Count})")">
+                            @foreach (var claim in claims.Take(10)) // แสดงแค่ 10 อันแรก
+                            {
+                                <div class="mb-2">
+                                    <strong>@claim.Type:</strong> @claim.Value
+                                </div>
+                            }
+                            @if (claims.Count > 10)
+                            {
+                                <div class="text-muted">... และอีก @(claims.Count - 10) claims</div>
+                            }
+                        </MudExpansionPanel>
+                    </MudExpansionPanels>
+                }
+                
+                @if (!string.IsNullOrEmpty(sessionToken))
+                {
+                    <MudAlert Severity="Severity.Success">
+                        <strong>Session Token (first 50 chars):</strong> @sessionToken.Substring(0, Math.Min(50, sessionToken.Length))...
+                    </MudAlert>
+                }
+                
+                <div class="d-flex gap-2 flex-wrap">
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="RefreshState">
+                        Refresh State
+                    </MudButton>
+                    
+                    <MudButton Variant="Variant.Outlined" Color="Color.Secondary" OnClick="CheckSessionStorage">
+                        Check Session Storage
+                    </MudButton>
+                    
+                    <MudButton Variant="Variant.Text" Color="Color.Info" OnClick="TriggerNotification">
+                        Test Notification
+                    </MudButton>
+                    
+                    <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="ForceRefresh">
+                        Force Refresh
+                    </MudButton>
+                    
+                    <MudButton Variant="Variant.Text" Color="Color.Warning" OnClick="ClearSession">
+                        Clear Session
+                    </MudButton>
+                </div>
+                
+                @if (!string.IsNullOrEmpty(debugMessage))
+                {
+                    <MudAlert Severity="Severity.Info">
+                        <strong>Debug:</strong> @debugMessage
+                    </MudAlert>
+                }
+            </div>
+        </MudCardContent>
+    </MudCard>
+</div>
+
+@code {
+    private bool isAuthenticated = false;
+    private bool hasServerAuth = false;
+    private bool hasSessionToken = false;
+    private string userName = "";
+    private string providerType = "";
+    private string authMethod = "";
+    private string sessionToken = "";
+    private string debugMessage = "";
+    private List<System.Security.Claims.Claim> claims = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await RefreshState();
+    }
+
+    private async Task RefreshState()
+    {
+        try
+        {
+            // ตรวจสอบ Authentication State
+            var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+            isAuthenticated = authState.User.Identity?.IsAuthenticated == true;
+            userName = authState.User.Identity?.Name ?? "No Name";
+            providerType = AuthStateProvider.GetType().Name;
+            claims = authState.User.Claims.ToList();
+            
+            // ตรวจสอบ Server-side authentication
+            try
+            {
+                var httpContext = HttpContextAccessor.HttpContext;
+                hasServerAuth = httpContext?.User?.Identity?.IsAuthenticated == true;
+            }
+            catch
+            {
+                hasServerAuth = false;
+            }
+            
+            // ตรวจสอบ Session Token
+            if (AuthStateProvider is HybridAuthenticationStateProvider hybridProvider)
+            {
+                hasSessionToken = await hybridProvider.HasSessionTokenAsync();
+            }
+            else
+            {
+                hasSessionToken = false;
+            }
+            
+            // กำหนด Authentication Method
+            if (hasServerAuth && hasSessionToken)
+            {
+                authMethod = "Hybrid (Server + Session Token)";
+            }
+            else if (hasServerAuth)
+            {
+                authMethod = "Server-side (Keycloak Cookies)";
+            }
+            else if (hasSessionToken)
+            {
+                authMethod = "Client-side (Session Token)";
+            }
+            else
+            {
+                authMethod = "Not Authenticated";
+            }
+            
+            debugMessage = $"State refreshed at {DateTime.Now:HH:mm:ss}";
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            debugMessage = $"Error: {ex.Message}";
+            StateHasChanged();
+        }
+    }
+    
+    private async Task CheckSessionStorage()
+    {
+        try
+        {
+            sessionToken = await JSRuntime.InvokeAsync<string>("sessionStorage.getItem", "access_token") ?? "";
+            debugMessage = $"Session storage checked at {DateTime.Now:HH:mm:ss}";
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            debugMessage = $"Error checking session: {ex.Message}";
+            StateHasChanged();
+        }
+    }
+    
+    private async Task TriggerNotification()
+    {
+        try
+        {
+            if (AuthStateProvider is HybridAuthenticationStateProvider hybridProvider && !string.IsNullOrEmpty(sessionToken))
+            {
+                hybridProvider.NotifyUserAuthentication(sessionToken);
+                debugMessage = $"Hybrid notification triggered at {DateTime.Now:HH:mm:ss}";
+            }
+            else if (AuthStateProvider is CustomAuthenticationStateProvider customProvider && !string.IsNullOrEmpty(sessionToken))
+            {
+                customProvider.NotifyUserAuthentication(sessionToken);
+                debugMessage = $"Custom notification triggered at {DateTime.Now:HH:mm:ss}";
+            }
+            else
+            {
+                debugMessage = "Cannot trigger notification - no session token or wrong provider type";
+            }
+            
+            // รอสักครู่แล้ว refresh
+            await Task.Delay(500);
+            await RefreshState();
+        }
+        catch (Exception ex)
+        {
+            debugMessage = $"Error triggering notification: {ex.Message}";
+        }
+        
+        StateHasChanged();
+    }
+    
+    private async Task ForceRefresh()
+    {
+        try
+        {
+            if (AuthStateProvider is HybridAuthenticationStateProvider hybridProvider)
+            {
+                await hybridProvider.RefreshAuthenticationStateAsync();
+                debugMessage = $"Force refresh triggered at {DateTime.Now:HH:mm:ss}";
+            }
+            else
+            {
+                debugMessage = "Force refresh not available for this provider type";
+            }
+            
+            // รอสักครู่แล้ว refresh
+            await Task.Delay(500);
+            await RefreshState();
+        }
+        catch (Exception ex)
+        {
+            debugMessage = $"Error force refreshing: {ex.Message}";
+        }
+        
+        StateHasChanged();
+    }
+    
+    private async Task ClearSession()
+    {
+        try
+        {
+            await JSRuntime.InvokeVoidAsync("sessionStorage.removeItem", "access_token");
+            await JSRuntime.InvokeVoidAsync("sessionStorage.removeItem", "refresh_token");
+            
+            if (AuthStateProvider is HybridAuthenticationStateProvider hybridProvider)
+            {
+                hybridProvider.NotifyUserLogout();
+            }
+            
+            debugMessage = $"Session cleared at {DateTime.Now:HH:mm:ss}";
+            
+            await Task.Delay(500);
+            await RefreshState();
+        }
+        catch (Exception ex)
+        {
+            debugMessage = $"Error clearing session: {ex.Message}";
+        }
+        
+        StateHasChanged();
+    }
+}
