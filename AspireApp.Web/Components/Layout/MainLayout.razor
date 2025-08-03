@@ -1,8 +1,10 @@
 ﻿@inherits LayoutComponentBase
+@inject IThemeService ThemeService
 @using AspireApp.Web.Services
+@implements IDisposable
 
-@* Required - Apply custom Thai theme *@
-<MudThemeProvider Theme="@_theme" />
+@* Required - Apply current theme *@
+<MudThemeProvider Theme="@currentTheme" />
 <MudPopoverProvider />
 
 @* Needed for dialogs *@
@@ -18,7 +20,10 @@
 
     <main>
         <div class="top-row px-4">
-            <LoginDisplay />
+            <div class="d-flex align-center justify-end w-100 gap-2">
+                <ThemeSwitcher />
+                <LoginDisplay />
+            </div>
         </div>
 
         <article class="content px-4">
@@ -34,5 +39,23 @@
 </div>
 
 @code {
-    private readonly MudTheme _theme = ThemeService.CreateThaiTheme();
+    private MudTheme currentTheme = new MudTheme();
+
+    protected override async Task OnInitializedAsync()
+    {
+        ThemeService.ThemeChanged += OnThemeChanged;
+        await ThemeService.LoadThemeAsync();
+        currentTheme = ThemeService.CurrentTheme;
+    }
+
+    private void OnThemeChanged(bool isDarkMode)
+    {
+        currentTheme = ThemeService.CurrentTheme;
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        ThemeService.ThemeChanged -= OnThemeChanged;
+    }
 }

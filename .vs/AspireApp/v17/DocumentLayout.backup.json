@@ -3,56 +3,8 @@
   "WorkspaceRootPath": "D:\\dev\\_private\\_proto\\AspireApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\loginlogoutendpointroutebuilderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\loginlogoutendpointroutebuilderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\components\\pages\\authdebug.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\components\\pages\\authdebug.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\services\\hybridauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\services\\hybridauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\authorizationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\authorizationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\components\\layout\\logindisplay.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\components\\layout\\logindisplay.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\components\\pages\\authtest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\components\\pages\\authtest.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\components\\pages\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\components\\pages\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|d:\\dev\\_private\\_proto\\aspireapp\\aspireapp.web\\services\\themeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{167C9083-B235-CCD4-47F1-339EE30AC88F}|AspireApp.Web\\AspireApp.Web.csproj|solutionrelative:aspireapp.web\\services\\themeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,137 +14,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Logout.razor",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Logout.razor",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Pages\\Logout.razor",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Logout.razor",
-              "RelativeToolTip": "AspireApp.Web\\Components\\Pages\\Logout.razor",
-              "ViewState": "AgIAAK0AAAAAAAAAAABLwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-03T08:12:49.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginLogoutEndpointRouteBuilderExtensions.cs",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\LoginLogoutEndpointRouteBuilderExtensions.cs",
-              "RelativeDocumentMoniker": "AspireApp.Web\\LoginLogoutEndpointRouteBuilderExtensions.cs",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\LoginLogoutEndpointRouteBuilderExtensions.cs",
-              "RelativeToolTip": "AspireApp.Web\\LoginLogoutEndpointRouteBuilderExtensions.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T08:12:15.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Weather.razor",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Weather.razor",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Pages\\Weather.razor",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Weather.razor",
-              "RelativeToolTip": "AspireApp.Web\\Components\\Pages\\Weather.razor",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-03T08:11:39.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthorizationHandler.cs",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\AuthorizationHandler.cs",
-              "RelativeDocumentMoniker": "AspireApp.Web\\AuthorizationHandler.cs",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\AuthorizationHandler.cs",
-              "RelativeToolTip": "AspireApp.Web\\AuthorizationHandler.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T08:05:01.53Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Home.razor",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Pages\\Home.razor",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "AspireApp.Web\\Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAKEAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-03T08:00:39.701Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoginDisplay.razor",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Layout\\LoginDisplay.razor",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Layout\\LoginDisplay.razor",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Layout\\LoginDisplay.razor",
-              "RelativeToolTip": "AspireApp.Web\\Components\\Layout\\LoginDisplay.razor",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-03T07:56:25.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "AspireApp.Web\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-03T07:51:41.872Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AuthTest.razor",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\AuthTest.razor",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Pages\\AuthTest.razor",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\AuthTest.razor",
-              "RelativeToolTip": "AspireApp.Web\\Components\\Pages\\AuthTest.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-03T07:51:23.42Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HybridAuthenticationStateProvider.cs",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Services\\HybridAuthenticationStateProvider.cs",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Services\\HybridAuthenticationStateProvider.cs",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Services\\HybridAuthenticationStateProvider.cs",
-              "RelativeToolTip": "AspireApp.Web\\Services\\HybridAuthenticationStateProvider.cs",
-              "ViewState": "AgIAANgAAAAAAAAAAAAAAOIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T07:41:03.954Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthDebug.razor",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\AuthDebug.razor",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Pages\\AuthDebug.razor",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\AuthDebug.razor",
-              "RelativeToolTip": "AspireApp.Web\\Components\\Pages\\AuthDebug.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-03T07:39:23.493Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -200,41 +26,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Login.razor",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Login.razor",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Pages\\Login.razor",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Pages\\Login.razor",
-              "RelativeToolTip": "AspireApp.Web\\Components\\Pages\\Login.razor",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAmwLoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-03T03:09:11.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "AspireApp.Web\\Components\\Layout\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-03T02:06:54.554Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Program.cs",
-              "RelativeDocumentMoniker": "AspireApp.Web\\Program.cs",
-              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Program.cs",
-              "RelativeToolTip": "AspireApp.Web\\Program.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAowGkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ThemeService.cs",
+              "DocumentMoniker": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Services\\ThemeService.cs",
+              "RelativeDocumentMoniker": "AspireApp.Web\\Services\\ThemeService.cs",
+              "ToolTip": "D:\\dev\\_private\\_proto\\AspireApp\\AspireApp.Web\\Services\\ThemeService.cs",
+              "RelativeToolTip": "AspireApp.Web\\Services\\ThemeService.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAUwJMAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T09:35:04.423Z",
+              "WhenOpened": "2025-08-03T08:21:52.964Z",
               "EditorCaption": ""
             }
           ]

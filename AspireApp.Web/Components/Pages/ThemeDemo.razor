@@ -1,0 +1,155 @@
+﻿@page "/theme-demo"
+@rendermode InteractiveServer
+@inject IThemeService ThemeService
+@using AspireApp.Web.Services
+
+<PageTitle>ทดสอบ Theme</PageTitle>
+
+<div class="container mt-4">
+    <div class="d-flex justify-between align-center mb-4">
+        <MudText Typo="Typo.h3">ตัวอย่าง Theme</MudText>
+        <div class="d-flex align-center gap-2">
+            <MudText Typo="Typo.body2">โหมดปัจจุบัน: @(ThemeService.IsDarkMode ? "มืด" : "สว่าง")</MudText>
+            <ThemeSwitcher />
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Colors Demo -->
+        <div class="col-md-6 mb-4">
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h5">สีต่างๆ</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <div class="d-flex flex-column gap-2">
+                        <MudButton Color="Color.Primary" Variant="Variant.Filled">Primary</MudButton>
+                        <MudButton Color="Color.Secondary" Variant="Variant.Filled">Secondary</MudButton>
+                        <MudButton Color="Color.Success" Variant="Variant.Filled">Success</MudButton>
+                        <MudButton Color="Color.Info" Variant="Variant.Filled">Info</MudButton>
+                        <MudButton Color="Color.Warning" Variant="Variant.Filled">Warning</MudButton>
+                        <MudButton Color="Color.Error" Variant="Variant.Filled">Error</MudButton>
+                    </div>
+                </MudCardContent>
+            </MudCard>
+        </div>
+
+        <!-- Typography Demo -->
+        <div class="col-md-6 mb-4">
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h5">ตัวอักษร</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <div class="d-flex flex-column gap-2">
+                        <MudText Typo="Typo.h1">ข้อความ H1</MudText>
+                        <MudText Typo="Typo.h2">ข้อความ H2</MudText>
+                        <MudText Typo="Typo.h3">ข้อความ H3</MudText>
+                        <MudText Typo="Typo.h4">ข้อความ H4</MudText>
+                        <MudText Typo="Typo.h5">ข้อความ H5</MudText>
+                        <MudText Typo="Typo.h6">ข้อความ H6</MudText>
+                        <MudText Typo="Typo.body1">ข้อความ Body1 - ภาษาไทยในแบบอักษร Sarabun</MudText>
+                        <MudText Typo="Typo.body2">ข้อความ Body2 - ข้อความขนาดเล็กกว่า</MudText>
+                        <MudText Typo="Typo.caption">ข้อความ Caption - ข้อความขนาดเล็ก</MudText>
+                    </div>
+                </MudCardContent>
+            </MudCard>
+        </div>
+
+        <!-- Alerts Demo -->
+        <div class="col-md-6 mb-4">
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h5">การแจ้งเตือน</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <div class="d-flex flex-column gap-2">
+                        <MudAlert Severity="Severity.Success">ข้อความสำเร็จ</MudAlert>
+                        <MudAlert Severity="Severity.Info">ข้อความข้อมูล</MudAlert>
+                        <MudAlert Severity="Severity.Warning">ข้อความเตือน</MudAlert>
+                        <MudAlert Severity="Severity.Error">ข้อความผิดพลาด</MudAlert>
+                    </div>
+                </MudCardContent>
+            </MudCard>
+        </div>
+
+        <!-- Input Demo -->
+        <div class="col-md-6 mb-4">
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h5">ช่องกรอกข้อมูล</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <div class="d-flex flex-column gap-3">
+                        <MudTextField T="string" Label="ข้อความธรรมดา" Variant="Variant.Outlined" />
+                        <MudTextField T="string" Label="รหัสผ่าน" Variant="Variant.Outlined" InputType="InputType.Password" />
+                        <MudSelect T="int" Label="เลือกตัวเลือก" Variant="Variant.Outlined">
+                            <MudSelectItem Value="1">ตัวเลือก 1</MudSelectItem>
+                            <MudSelectItem Value="2">ตัวเลือก 2</MudSelectItem>
+                            <MudSelectItem Value="3">ตัวเลือก 3</MudSelectItem>
+                        </MudSelect>
+                        <MudCheckBox T="bool" Label="ช่องเลือก" />
+                        <MudSwitch T="bool" Label="สวิตช์" />
+                    </div>
+                </MudCardContent>
+            </MudCard>
+        </div>
+
+        <!-- Table Demo -->
+        <div class="col-12 mb-4">
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h5">ตาราง</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudTable Items="@sampleData" Hover="true" Striped="true">
+                        <HeaderContent>
+                            <MudTh>ชื่อ</MudTh>
+                            <MudTh>อายุ</MudTh>
+                            <MudTh>เมือง</MudTh>
+                            <MudTh>สถานะ</MudTh>
+                        </HeaderContent>
+                        <RowTemplate>
+                            <MudTd DataLabel="ชื่อ">@context.Name</MudTd>
+                            <MudTd DataLabel="อายุ">@context.Age</MudTd>
+                            <MudTd DataLabel="เมือง">@context.City</MudTd>
+                            <MudTd DataLabel="สถานะ">
+                                <MudChip T="string" Color="@(context.IsActive ? Color.Success : Color.Default)">
+                                    @(context.IsActive ? "ใช้งาน" : "ไม่ใช้งาน")
+                                </MudChip>
+                            </MudTd>
+                        </RowTemplate>
+                    </MudTable>
+                </MudCardContent>
+            </MudCard>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<SampleData> sampleData = new()
+    {
+        new() { Name = "สมชาย ใจดี", Age = 25, City = "กรุงเทพฯ", IsActive = true },
+        new() { Name = "สมหญิง รักเรียน", Age = 30, City = "เชียงใหม่", IsActive = false },
+        new() { Name = "สมศักดิ์ มั่นใจ", Age = 35, City = "ขอนแก่น", IsActive = true },
+        new() { Name = "สมพร สวยงาม", Age = 28, City = "ภูเก็ต", IsActive = true }
+    };
+
+    public class SampleData
+    {
+        public string Name { get; set; } = "";
+        public int Age { get; set; }
+        public string City { get; set; } = "";
+        public bool IsActive { get; set; }
+    }
+}

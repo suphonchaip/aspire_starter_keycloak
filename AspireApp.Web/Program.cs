@@ -33,6 +33,9 @@ builder.Services.AddHttpClient<IKeycloakAuthService, KeycloakAuthService>();
 // Add Token Service
 builder.Services.AddScoped<ITokenService, TokenService>();
 
+// Add Theme Service
+builder.Services.AddScoped<IThemeService, ThemeService>();
+
 builder.Services.AddHttpClient<WeatherApiClient>(client =>
     {
         // This URL uses "https+http://" to indicate HTTPS is preferred over HTTP.

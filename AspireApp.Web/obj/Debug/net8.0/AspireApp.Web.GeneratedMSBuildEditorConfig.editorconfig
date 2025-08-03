@@ -63,6 +63,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0Rm9udC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Pages/ThemeDemo.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaGVtZURlbW8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -71,8 +75,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Shared/ThemeSwitcher.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcVGhlbWVTd2l0Y2hlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dev/_private/_proto/AspireApp/AspireApp.Web/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/dev/_private/_proto/AspireApp/AspireApp.Web/Components/Layout/MainLayout.razor]

@@ -1,0 +1,35 @@
+﻿@inject IThemeService ThemeService
+@using AspireApp.Web.Services
+@implements IDisposable
+
+<MudTooltip Text="@(ThemeService.IsDarkMode ? "เปลี่ยนเป็นธีมสว่าง" : "เปลี่ยนเป็นธีมมืด")">
+    <MudIconButton Icon="@themeIcon"
+                   Color="Color.Inherit"
+                   OnClick="ToggleTheme"
+                   Size="Size.Medium" />
+</MudTooltip>
+
+@code {
+    private string themeIcon => ThemeService.IsDarkMode ? Icons.Material.Filled.LightMode : Icons.Material.Filled.DarkMode;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ThemeService.ThemeChanged += OnThemeChanged;
+        await ThemeService.LoadThemeAsync();
+    }
+
+    private async Task ToggleTheme()
+    {
+        await ThemeService.ToggleThemeAsync();
+    }
+
+    private void OnThemeChanged(bool isDarkMode)
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        ThemeService.ThemeChanged -= OnThemeChanged;
+    }
+}

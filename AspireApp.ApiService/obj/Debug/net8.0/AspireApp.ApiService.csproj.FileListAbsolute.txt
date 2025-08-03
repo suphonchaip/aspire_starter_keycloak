@@ -82,3 +82,4 @@ D:\dev\_private\_proto\AspireApp\AspireApp.ApiService\obj\Debug\net8.0\refint\As
 D:\dev\_private\_proto\AspireApp\AspireApp.ApiService\obj\Debug\net8.0\AspireApp.ApiService.pdb
 D:\dev\_private\_proto\AspireApp\AspireApp.ApiService\obj\Debug\net8.0\AspireApp.ApiService.genruntimeconfig.cache
 D:\dev\_private\_proto\AspireApp\AspireApp.ApiService\obj\Debug\net8.0\ref\AspireApp.ApiService.dll
+D:\dev\_private\_proto\AspireApp\AspireApp.ApiService\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
